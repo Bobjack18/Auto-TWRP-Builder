@@ -51,7 +51,9 @@ jobs:
     - name: Patch twrpdtgen for Android 5.0
       run: |
         sed -i 's/self.get_first_prop(FIRST_API_LEVEL)/"21"/g' /home/runner/.local/lib/python3.10/site-packages/sebaubuntu_libs/libandroid/device_info.py
-
+        sed -i 's/self.get_first_prop(BUILD_SECURITY_PATCH)/"2015-01-01"/g' /home/runner/.local/lib/python3.10/site-packages/sebaubuntu_libs/libandroid/device_info.py
+        sed -i 's/self.get_first_prop(VENDOR_SECURITY_PATCH)/"2015-01-01"/g' /home/runner/.local/lib/python3.10/site-packages/sebaubuntu_libs/libandroid/device_info.py
+  
     - name: Install OpenJDK      
       uses: actions/setup-java@v3      
       with:        
